@@ -329,5 +329,7 @@ ASALocalRun/
 .mfractor/
 ##########################################################
 
-
+lib/sp/
+lib/sp_utils_x86.lib
+lib/sp_utils_x64.lib
 
