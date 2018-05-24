@@ -1,0 +1,56 @@
+;  CONTRIBUTORS:
+;    Sean Pesce
+
+LIBRARY d3d11.dll
+EXPORTS
+    CreateDirect3D11DeviceFromDXGIDevice = CreateDirect3D11DeviceFromDXGIDevice_
+    CreateDirect3D11SurfaceFromDXGISurface = CreateDirect3D11SurfaceFromDXGISurface_
+    D3D11CoreCreateDevice = D3D11CoreCreateDevice_
+    D3D11CoreCreateLayeredDevice = D3D11CoreCreateLayeredDevice_
+    D3D11CoreGetLayeredDeviceSize = D3D11CoreGetLayeredDeviceSize_
+    D3D11CoreRegisterLayers = D3D11CoreRegisterLayers_
+    D3D11CreateDevice = D3D11CreateDevice_
+    D3D11CreateDeviceAndSwapChain = D3D11CreateDeviceAndSwapChain_
+    D3D11CreateDeviceForD3D12 = D3D11CreateDeviceForD3D12_
+    D3D11On12CreateDevice = D3D11On12CreateDevice_
+    D3DKMTCloseAdapter = D3DKMTCloseAdapter_
+    D3DKMTCreateAllocation = D3DKMTCreateAllocation_
+    D3DKMTCreateContext = D3DKMTCreateContext_
+    D3DKMTCreateDevice = D3DKMTCreateDevice_
+    D3DKMTCreateSynchronizationObject = D3DKMTCreateSynchronizationObject_
+    D3DKMTDestroyAllocation = D3DKMTDestroyAllocation_
+    D3DKMTDestroyContext = D3DKMTDestroyContext_
+    D3DKMTDestroyDevice = D3DKMTDestroyDevice_
+    D3DKMTDestroySynchronizationObject = D3DKMTDestroySynchronizationObject_
+    D3DKMTEscape = D3DKMTEscape_
+    D3DKMTGetContextSchedulingPriority = D3DKMTGetContextSchedulingPriority_
+    D3DKMTGetDeviceState = D3DKMTGetDeviceState_
+    D3DKMTGetDisplayModeList = D3DKMTGetDisplayModeList_
+    D3DKMTGetMultisampleMethodList = D3DKMTGetMultisampleMethodList_
+    D3DKMTGetRuntimeData = D3DKMTGetRuntimeData_
+    D3DKMTGetSharedPrimaryHandle = D3DKMTGetSharedPrimaryHandle_
+    D3DKMTLock = D3DKMTLock_
+    D3DKMTOpenAdapterFromHdc = D3DKMTOpenAdapterFromHdc_
+    D3DKMTOpenResource = D3DKMTOpenResource_
+    D3DKMTPresent = D3DKMTPresent_
+    D3DKMTQueryAdapterInfo = D3DKMTQueryAdapterInfo_
+    D3DKMTQueryAllocationResidency = D3DKMTQueryAllocationResidency_
+    D3DKMTQueryResourceInfo = D3DKMTQueryResourceInfo_
+    D3DKMTRender = D3DKMTRender_
+    D3DKMTSetAllocationPriority = D3DKMTSetAllocationPriority_
+    D3DKMTSetContextSchedulingPriority = D3DKMTSetContextSchedulingPriority_
+    D3DKMTSetDisplayMode = D3DKMTSetDisplayMode_
+    D3DKMTSetDisplayPrivateDriverFormat = D3DKMTSetDisplayPrivateDriverFormat_
+    D3DKMTSetGammaRamp = D3DKMTSetGammaRamp_
+    D3DKMTSetVidPnSourceOwner = D3DKMTSetVidPnSourceOwner_
+    D3DKMTSignalSynchronizationObject = D3DKMTSignalSynchronizationObject_
+    D3DKMTUnlock = D3DKMTUnlock_
+    D3DKMTWaitForSynchronizationObject = D3DKMTWaitForSynchronizationObject_
+    D3DKMTWaitForVerticalBlankEvent = D3DKMTWaitForVerticalBlankEvent_
+    D3DPerformance_BeginEvent = D3DPerformance_BeginEvent_
+    D3DPerformance_EndEvent = D3DPerformance_EndEvent_
+    D3DPerformance_GetStatus = D3DPerformance_GetStatus_
+    D3DPerformance_SetMarker = D3DPerformance_SetMarker_
+    EnableFeatureLevelUpgrade = EnableFeatureLevelUpgrade_
+    OpenAdapter10 = OpenAdapter10_
+    OpenAdapter10_2 = OpenAdapter10_2_
