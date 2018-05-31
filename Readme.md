@@ -9,6 +9,7 @@
 ## Built With  
  * [Microsoft Visual C++](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)  
  * [Visual Studio 2017](https://www.visualstudio.com/)  
+ * [inih](https://github.com/benhoyt/inih) - .INI file parsing library  
 
 
 ## License  
