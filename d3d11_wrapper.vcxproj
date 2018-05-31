@@ -120,7 +120,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>src/d3d11/exports.def</ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib;../lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>sp_utils_dbg_x86.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -139,7 +139,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>src/d3d11/exports.def</ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib;../lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>sp_utils_dbg_x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -162,7 +162,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>src/d3d11/exports.def</ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib;../lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>sp_utils_x86.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -185,7 +185,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>src/d3d11/exports.def</ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>lib;../lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>sp_utils_x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
