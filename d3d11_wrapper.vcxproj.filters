@@ -19,12 +19,6 @@
     <Filter Include="Source Files\d3d11">
       <UniqueIdentifier>{b99255f0-be25-4855-aefa-d0e731d035fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\lib">
-      <UniqueIdentifier>{f3987f95-2500-4e4d-abc2-787cb17cca71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\lib\inih">
-      <UniqueIdentifier>{c08a1ffd-4c37-4d10-b600-92e422840cfc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\d3d11\wrapper">
       <UniqueIdentifier>{6c9a39b9-5a34-4faf-a36c-2d986faa598b}</UniqueIdentifier>
     </Filter>

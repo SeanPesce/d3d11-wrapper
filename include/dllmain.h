@@ -15,24 +15,41 @@
 #include "sp/log.h"
 
 
-#ifndef D3D11_ON_PROCESS_ATTACH
-#define D3D11_ON_PROCESS_ATTACH(h_module, lp_reserved)
-#endif // D3D11_ON_PROCESS_ATTACH
-#ifndef D3D11_ON_PROCESS_DETACH
-#define D3D11_ON_PROCESS_DETACH(h_module, lp_reserved)
-#endif // D3D11_ON_PROCESS_DETACH
-#ifndef D3D11_ON_THREAD_ATTACH
-#define D3D11_ON_THREAD_ATTACH(h_module, lp_reserved)
-#endif // D3D11_ON_THREAD_ATTACH
-#ifndef D3D11_ON_THREAD_DETACH
-#define D3D11_ON_THREAD_DETACH(h_module, lp_reserved)
-#endif // D3D11_ON_THREAD_DETACH
+namespace dll {
+typedef BOOL(entry_point_t)(HMODULE, LPVOID);
+}
+
+#ifdef WRAPPER_ON_PROCESS_ATTACH
+extern dll::entry_point_t WRAPPER_ON_PROCESS_ATTACH;
+#define WRAPPER_ON_PROCESS_ATTACH_GLOBAL_NS :: ## WRAPPER_ON_PROCESS_ATTACH
+#else
+#define WRAPPER_ON_PROCESS_ATTACH_GLOBAL_NS(h_module, lp_reserved)
+#endif // WRAPPER_ON_PROCESS_ATTACH
+
+#ifdef WRAPPER_ON_PROCESS_DETACH
+extern dll::entry_point_t WRAPPER_ON_PROCESS_DETACH;
+#define WRAPPER_ON_PROCESS_DETACH_GLOBAL_NS :: ## WRAPPER_ON_PROCESS_DETACH
+#else
+#define WRAPPER_ON_PROCESS_DETACH_GLOBAL_NS(h_module, lp_reserved)
+#endif // WRAPPER_ON_PROCESS_DETACH
+
+#ifdef WRAPPER_ON_THREAD_ATTACH
+extern dll::entry_point_t WRAPPER_ON_THREAD_ATTACH;
+#define WRAPPER_ON_THREAD_ATTACH_GLOBAL_NS :: ## WRAPPER_ON_THREAD_ATTACH
+#else
+#define WRAPPER_ON_THREAD_ATTACH_GLOBAL_NS(h_module, lp_reserved)
+#endif // WRAPPER_ON_THREAD_ATTACH
+
+#ifdef WRAPPER_ON_THREAD_DETACH
+extern dll::entry_point_t WRAPPER_ON_THREAD_DETACH;
+#define WRAPPER_ON_THREAD_DETACH_GLOBAL_NS :: ## WRAPPER_ON_THREAD_DETACH
+#else
+#define WRAPPER_ON_THREAD_DETACH_GLOBAL_NS(h_module, lp_reserved)
+#endif // WRAPPER_ON_THREAD_DETACH
 
 
 
 namespace dll {
-
-typedef BOOL(*entry_point_t)(HMODULE, LPVOID);
 
 constexpr const char* build = __DATE__ "   " __TIME__;
 
@@ -54,7 +71,7 @@ inline BOOL on_process_attach(HMODULE h_module, LPVOID lp_reserved)
 
     d3d11::hook_exports();
 
-    D3D11_ON_PROCESS_ATTACH(h_module, lp_reserved);
+    WRAPPER_ON_PROCESS_ATTACH_GLOBAL_NS(h_module, lp_reserved);
 
     return TRUE;
 }
@@ -62,7 +79,7 @@ inline BOOL on_process_attach(HMODULE h_module, LPVOID lp_reserved)
 
 inline BOOL on_process_detach(HMODULE h_module, LPVOID lp_reserved)
 {
-    D3D11_ON_PROCESS_DETACH(h_module, lp_reserved);
+    WRAPPER_ON_PROCESS_DETACH_GLOBAL_NS(h_module, lp_reserved);
 
     SP_LOG("[%s %s] Detached from process.\n\n",
         sp::str::get_date(sp::util::YYYYMMDD).c_str(),
@@ -74,14 +91,14 @@ inline BOOL on_process_detach(HMODULE h_module, LPVOID lp_reserved)
 
 inline BOOL on_thread_attach(HMODULE h_module, LPVOID lp_reserved)
 {
-    D3D11_ON_THREAD_ATTACH(h_module, lp_reserved);
+    WRAPPER_ON_THREAD_ATTACH_GLOBAL_NS(h_module, lp_reserved);
     return TRUE;
 }
 
 
 inline BOOL on_thread_detach(HMODULE h_module, LPVOID lp_reserved)
 {
-    D3D11_ON_THREAD_DETACH(h_module, lp_reserved);
+    WRAPPER_ON_THREAD_DETACH_GLOBAL_NS(h_module, lp_reserved);
     return TRUE;
 }
 
