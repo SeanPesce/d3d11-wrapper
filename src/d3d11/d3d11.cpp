@@ -32,6 +32,7 @@ void hook_exports()
     }
     if (!chain)
     {
+        MessageBox(NULL, "Unable to locate original d3d11.dll (or compatible library to chain)", "ERROR: Failed to load original d3d11.dll", NULL);
         exit(0);
     }
     

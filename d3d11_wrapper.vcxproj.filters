@@ -25,6 +25,9 @@
     <Filter Include="Source Files\lib\inih">
       <UniqueIdentifier>{c08a1ffd-4c37-4d10-b600-92e422840cfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\d3d11\wrapper">
+      <UniqueIdentifier>{6c9a39b9-5a34-4faf-a36c-2d986faa598b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\dllmain.cpp">
@@ -44,7 +47,7 @@
     <ClInclude Include="include\d3d11\main.h">
       <Filter>Header Files\d3d11</Filter>
     </ClInclude>
-    <ClInclude Include="include\events.h">
+    <ClInclude Include="include\dllmain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -331,5 +331,13 @@ ASALocalRun/
 
 lib/sp/
 lib/sp_utils_x86.lib
+lib/sp_utils_x86.pdb
 lib/sp_utils_x64.lib
+lib/sp_utils_x64.pdb
+lib/sp_utils_dbg_x86.lib
+lib/sp_utils_dbg_x86.pdb
+lib/sp_utils_dbg_x86.idb
+lib/sp_utils_dbg_x64.lib
+lib/sp_utils_dbg_x64.pdb
+lib/sp_utils_dbg_x64.idb
 
