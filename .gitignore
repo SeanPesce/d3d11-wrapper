@@ -329,6 +329,8 @@ ASALocalRun/
 .mfractor/
 ##########################################################
 
+rsrc/SpriteFonts/jp.spritefont
+
 lib/sp/
 lib/sp_utils_x86.lib
 lib/sp_utils_x86.pdb
@@ -341,3 +343,17 @@ lib/sp_utils_dbg_x64.lib
 lib/sp_utils_dbg_x64.pdb
 lib/sp_utils_dbg_x64.idb
 
+!DirectXTK_x86.pdb
+!DirectXTK_dbg_x86.pdb
+!DirectXTK_x64.pdb
+!DirectXTK_dbg_x64.pdb
+
+!DebugDraw_x86.pdb
+!DebugDraw_dbg_x86.pdb
+!DebugDraw_x64.pdb
+!DebugDraw_dbg_x64.pdb
+
+!FW1FontWrapper_x86.pdb
+!FW1FontWrapper_dbg_x86.pdb
+!FW1FontWrapper_x64.pdb
+!FW1FontWrapper_dbg_x64.pdb
