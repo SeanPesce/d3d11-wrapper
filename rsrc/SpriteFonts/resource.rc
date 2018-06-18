@@ -1,0 +1,12 @@
+#pragma once
+
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include <windows.h>
+#include <commctrl.h>
+#include <richedit.h>
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#include "..\\..\\include\\resource.h"
+
+IDU_SPRITE_FONT_COURIER_NEW    BINARY    DISCARDABLE    "courier_new.spritefont"
+
