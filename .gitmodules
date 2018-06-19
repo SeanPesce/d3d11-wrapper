@@ -1,3 +1,6 @@
 [submodule "lib/DirectXTK"]
 	path = lib/DirectXTK
 	url = https://github.com/Microsoft/DirectXTK.git
+[submodule "lib/Detours"]
+	path = lib/Detours
+	url = https://github.com/Microsoft/Detours.git

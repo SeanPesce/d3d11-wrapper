@@ -357,3 +357,8 @@ lib/sp_utils_dbg_x64.idb
 !FW1FontWrapper_dbg_x86.pdb
 !FW1FontWrapper_x64.pdb
 !FW1FontWrapper_dbg_x64.pdb
+
+detours_x86.pdb
+detours_dbg_x86.pdb
+detours_x64.pdb
+detours_dbg_x64.pdb
