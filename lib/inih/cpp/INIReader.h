@@ -37,56 +37,102 @@ public:
 
     // Extendable value-getter function
     template <typename T>
-    T Get(const std::string& section, const std::string& name) const;
+    inline T Get(const std::string& section, const std::string& name) const
+    {
+        T result;
+        return result;
+    }
     template <typename T>
-    T Get(const std::string& section, const std::string& name, const T& default_value) const;
+    inline T Get(const std::string& section, const std::string& name, const T& default_value) const
+    {
+        return default_value;
+    }
 
     // Get a string value from INI file, returning default_value if not found.
     template <>
-    std::string Get<std::string>(const std::string& section, const std::string& name, const std::string& default_value) const;
-    template <>
-    std::string Get<std::string>(const std::string& section, const std::string& name) const;
+    inline std::string Get<std::string>(const std::string& section, const std::string& name, const std::string& default_value) const
+    {
+        std::string key = MakeKey(section, name);
+        // Use _values.find() here instead of _values.at() to support pre C++11 compilers
+        return _values.count(key) ? _values.find(key)->second : default_value;
+    }
 
     // Get an integer (long) value from INI file, returning default_value if
     // not found or not a valid integer (decimal "1234", "-1234", or hex "0x4d2").
     long GetInteger(const std::string& section, const std::string& name, long default_value) const;
     template <>
-    long Get<long>(const std::string& section, const std::string& name, const long& default_value) const;
+    inline long Get<long>(const std::string& section, const std::string& name, const long& default_value) const
+    {
+        return this->GetInteger(section, name, default_value);
+    }
     template <>
-    long Get<long>(const std::string& section, const std::string& name) const;
+    inline long Get<long>(const std::string& section, const std::string& name) const
+    {
+        return this->GetInteger(section, name, 0L);
+    }
 
     template <>
-    int Get<int>(const std::string& section, const std::string& name, const int& default_value) const;
+    inline int Get<int>(const std::string& section, const std::string& name, const int& default_value) const
+    {
+        return static_cast<int>(this->GetInteger(section, name, default_value));
+    }
     template <>
-    int Get<int>(const std::string& section, const std::string& name) const;
+    inline int Get<int>(const std::string& section, const std::string& name) const
+    {
+        return static_cast<int>(this->GetInteger(section, name, 0L));
+    }
 
     template <>
-    short Get<short>(const std::string& section, const std::string& name, const short& default_value) const;
+    inline short Get<short>(const std::string& section, const std::string& name, const short& default_value) const
+    {
+        return static_cast<short>(this->GetInteger(section, name, default_value));
+    }
     template <>
-    short Get<short>(const std::string& section, const std::string& name) const;
+    inline short Get<short>(const std::string& section, const std::string& name) const
+    {
+        return static_cast<short>(this->GetInteger(section, name, 0L));
+    }
 
     // Get a real (floating point double) value from INI file, returning
     // default_value if not found or not a valid floating point value
     // according to strtod().
     double GetReal(const std::string& section, const std::string& name, double default_value) const;
     template <>
-    double Get<double>(const std::string& section, const std::string& name, const double& default_value) const;
+    inline double Get<double>(const std::string& section, const std::string& name, const double& default_value) const
+    {
+        return this->GetReal(section, name, default_value);
+    }
     template <>
-    double Get<double>(const std::string& section, const std::string& name) const;
+    inline double Get<double>(const std::string& section, const std::string& name) const
+    {
+        return this->GetReal(section, name, 0.0);
+    }
 
     template <>
-    float Get<float>(const std::string& section, const std::string& name, const float& default_value) const;
+    inline float Get<float>(const std::string& section, const std::string& name, const float& default_value) const
+    {
+        return static_cast<float>(this->GetReal(section, name, default_value));
+    }
     template <>
-    float Get<float>(const std::string& section, const std::string& name) const;
+    inline float Get<float>(const std::string& section, const std::string& name) const
+    {
+        return static_cast<float>(this->GetReal(section, name, 0.0));
+    }
 
     // Get a boolean value from INI file, returning default_value if not found or if
     // not a valid true/false value. Valid true values are "true", "yes", "on", "1",
     // and valid false values are "false", "no", "off", "0" (not case sensitive).
     bool GetBoolean(const std::string& section, const std::string& name, bool default_value) const;
     template <>
-    bool Get<bool>(const std::string& section, const std::string& name, const bool& default_value) const;
+    inline bool Get<bool>(const std::string& section, const std::string& name, const bool& default_value) const
+    {
+        return this->GetBoolean(section, name, default_value);
+    }
     template <>
-    bool Get<bool>(const std::string& section, const std::string& name) const;
+    inline bool Get<bool>(const std::string& section, const std::string& name) const
+    {
+        return this->GetBoolean(section, name, false);
+    }
 
     // Get a virtual-key code value from INI file, returning 0 if not found or if
     // not a valid hex-formatted byte value. Valid values are 0 to FF (not case
@@ -94,9 +140,15 @@ public:
     //   https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx
     uint8_t GetVkCode(const std::string& section, const std::string& name, uint8_t default_value = 0) const;
     template <>
-    uint8_t Get<uint8_t>(const std::string& section, const std::string& name, const uint8_t& default_value) const;
+    inline uint8_t Get<uint8_t>(const std::string& section, const std::string& name, const uint8_t& default_value) const
+    {
+        return this->GetVkCode(section, name, default_value);
+    }
     template <>
-    uint8_t Get<uint8_t>(const std::string& section, const std::string& name) const;
+    inline uint8_t Get<uint8_t>(const std::string& section, const std::string& name) const
+    {
+        return this->GetVkCode(section, name, 0);
+    }
 
 private:
     int _error;
